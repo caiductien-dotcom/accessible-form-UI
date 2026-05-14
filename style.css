@@ -1,0 +1,49 @@
+:root {
+    --primary: #000;
+    --error: #ff4d4d;
+    --border: #ccc;
+    --circle-len: 314; /* Chu vi vòng tròn 2 * pi * r (r=50) */
+}
+
+.form-card {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 40px;
+    max-width: 800px;
+    padding: 40px;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+}
+
+.input-group { margin-bottom: 20px; display: flex; flex-direction: column; }
+
+input {
+    padding: 12px;
+    border: 2px solid var(--border);
+    border-radius: 8px;
+    font-size: 1rem;
+}
+/* SVG progress styling*/
+.progress-circle {
+    position: relative;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.bg-circle{
+    fill:none;
+    stroke: #eee;
+    stroke-width: 8;
+}
+.fg-circle {
+    fill: none; stroke: var(--primary); stroke-width: 8;
+    stroke-dasharray: var(--circle-len);
+    stroke-dashoffset: var(--circle-len);
+    transition: stroke-dashoffset 0.4s ease;
+    transform: rotate(-90deg);
+    transform-origin: center;
+}
+#percentText { position: absolute; font-size: 1.5rem; font-weight: bold; }
+
+.checklist li { color: #aaa; margin-bottom: 10px; transition: 0.3s; }
+.checklist li.done { text-decoration: line-through; color: #ddd; }
